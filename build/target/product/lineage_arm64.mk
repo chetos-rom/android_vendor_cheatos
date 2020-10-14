@@ -14,7 +14,7 @@
 
 $(call inherit-product, build/target/product/aosp_arm64.mk)
 
-include vendor/cheatos/build/target/product/lineage_generic_target.mk
+include vendor/chetos/build/target/product/lineage_generic_target.mk
 
 TARGET_NO_KERNEL_OVERRIDE := true
 

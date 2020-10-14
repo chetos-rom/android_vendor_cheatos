@@ -14,7 +14,7 @@
 
 $(call inherit-product, build/target/product/aosp_x86_64.mk)
 
-include vendor/cheatos/build/target/product/lineage_generic_target.mk
+include vendor/chetos/build/target/product/lineage_generic_target.mk
 
 PRODUCT_NAME := lineage_x86_64
 

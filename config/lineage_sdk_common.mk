@@ -1,12 +1,12 @@
 # Permissions for lineage sdk services
 PRODUCT_COPY_FILES += \
-    vendor/cheatos/config/permissions/org.lineageos.audio.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.audio.xml \
-    vendor/cheatos/config/permissions/org.lineageos.hardware.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.hardware.xml \
-    vendor/cheatos/config/permissions/org.lineageos.livedisplay.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.livedisplay.xml \
-    vendor/cheatos/config/permissions/org.lineageos.performance.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.performance.xml \
-    vendor/cheatos/config/permissions/org.lineageos.profiles.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.profiles.xml \
-    vendor/cheatos/config/permissions/org.lineageos.settings.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.settings.xml \
-    vendor/cheatos/config/permissions/org.lineageos.trust.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.trust.xml
+    vendor/chetos/config/permissions/org.lineageos.audio.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.audio.xml \
+    vendor/chetos/config/permissions/org.lineageos.hardware.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.hardware.xml \
+    vendor/chetos/config/permissions/org.lineageos.livedisplay.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.livedisplay.xml \
+    vendor/chetos/config/permissions/org.lineageos.performance.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.performance.xml \
+    vendor/chetos/config/permissions/org.lineageos.profiles.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.profiles.xml \
+    vendor/chetos/config/permissions/org.lineageos.settings.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.settings.xml \
+    vendor/chetos/config/permissions/org.lineageos.trust.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.trust.xml
 
 # Lineage Platform Library
 PRODUCT_PACKAGES += \

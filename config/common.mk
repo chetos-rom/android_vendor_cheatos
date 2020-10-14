@@ -23,15 +23,15 @@ endif
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/cheatos/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/cheatos/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/cheatos/prebuilt/common/bin/50-lineage.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-lineage.sh
+    vendor/chetos/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/chetos/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/chetos/prebuilt/common/bin/50-lineage.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-lineage.sh
 
 ifneq ($(AB_OTA_PARTITIONS),)
 PRODUCT_COPY_FILES += \
-    vendor/cheatos/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
-    vendor/cheatos/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
-    vendor/cheatos/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
+    vendor/chetos/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
+    vendor/chetos/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
+    vendor/chetos/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
 ifneq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.ota.allow_downgrade=true
@@ -40,23 +40,23 @@ endif
 
 # Backup Services whitelist
 PRODUCT_COPY_FILES += \
-    vendor/cheatos/config/permissions/backup.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/backup.xml
+    vendor/chetos/config/permissions/backup.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/backup.xml
 
 # Lineage-specific broadcast actions whitelist
 PRODUCT_COPY_FILES += \
-    vendor/cheatos/config/permissions/lineage-sysconfig.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/lineage-sysconfig.xml
+    vendor/chetos/config/permissions/lineage-sysconfig.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/lineage-sysconfig.xml
 
 # Copy all Lineage-specific init rc files
-$(foreach f,$(wildcard vendor/cheatos/prebuilt/common/etc/init/*.rc),\
+$(foreach f,$(wildcard vendor/chetos/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
-    vendor/cheatos/prebuilt/common/lib/content-types.properties:$(TARGET_COPY_OUT_SYSTEM)/lib/content-types.properties
+    vendor/chetos/prebuilt/common/lib/content-types.properties:$(TARGET_COPY_OUT_SYSTEM)/lib/content-types.properties
 
 # Enable Android Beam on all targets
 PRODUCT_COPY_FILES += \
-    vendor/cheatos/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
+    vendor/chetos/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -68,26 +68,26 @@ PRODUCT_COPY_FILES += \
 
 # This is Lineage!
 PRODUCT_COPY_FILES += \
-    vendor/cheatos/config/permissions/org.lineageos.android.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.android.xml
+    vendor/chetos/config/permissions/org.lineageos.android.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.android.xml
 
 # Enforce privapp-permissions whitelist
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.control_privapp_permissions=enforce
 
 # Include AOSP audio files
-include vendor/cheatos/config/aosp_audio.mk
+include vendor/chetos/config/aosp_audio.mk
 
 # Include Lineage audio files
-include vendor/cheatos/config/lineage_audio.mk
+include vendor/chetos/config/lineage_audio.mk
 
 ifneq ($(TARGET_DISABLE_LINEAGE_SDK), true)
 # Lineage SDK
-include vendor/cheatos/config/lineage_sdk_common.mk
+include vendor/chetos/config/lineage_sdk_common.mk
 endif
 
 # TWRP
 ifeq ($(WITH_TWRP),true)
-include vendor/cheatos/config/twrp.mk
+include vendor/chetos/config/twrp.mk
 endif
 
 # Gapps
@@ -191,8 +191,8 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI \
     TrebuchetQuickStep
 
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/cheatos/overlay
-DEVICE_PACKAGE_OVERLAYS += vendor/cheatos/overlay/common
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/chetos/overlay
+DEVICE_PACKAGE_OVERLAYS += vendor/chetos/overlay/common
 
 PRODUCT_VERSION_MAJOR = 18
 PRODUCT_VERSION_MINOR = 0
@@ -283,9 +283,9 @@ else
 endif
 
 PRODUCT_EXTRA_RECOVERY_KEYS += \
-    vendor/cheatos/build/target/product/security/lineage
+    vendor/chetos/build/target/product/security/lineage
 
--include vendor/cheatos-priv/keys/keys.mk
+-include vendor/chetos-priv/keys/keys.mk
 
 LINEAGE_DISPLAY_VERSION := $(LINEAGE_VERSION)
 
@@ -313,4 +313,4 @@ endif
 endif
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
--include vendor/cheatos/config/partner_gms.mk
+-include vendor/chetos/config/partner_gms.mk
