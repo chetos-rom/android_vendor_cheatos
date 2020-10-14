@@ -90,6 +90,9 @@ ifeq ($(WITH_TWRP),true)
 include vendor/cheatos/config/twrp.mk
 endif
 
+# Gapps
+$(call inherit-product, vendor/gapps/common/common-vendor.mk)
+
 # Do not include art debug targets
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
